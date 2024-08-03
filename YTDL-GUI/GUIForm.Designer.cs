@@ -30,12 +30,15 @@
         {
             URL_tb = new TextBox();
             label1 = new Label();
+            label2 = new Label();
+            outputName = new TextBox();
+            outputFormatSelect = new ComboBox();
             SuspendLayout();
             // 
             // URL_tb
             // 
             URL_tb.Anchor = AnchorStyles.None;
-            URL_tb.Location = new Point(48, 13);
+            URL_tb.Location = new Point(48, 26);
             URL_tb.Name = "URL_tb";
             URL_tb.Size = new Size(233, 23);
             URL_tb.TabIndex = 0;
@@ -44,17 +47,48 @@
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.Location = new Point(11, 16);
+            label1.Location = new Point(11, 29);
             label1.Name = "label1";
             label1.Size = new Size(31, 15);
             label1.TabIndex = 1;
             label1.Text = "URL:";
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.None;
+            label2.AutoSize = true;
+            label2.Location = new Point(11, 57);
+            label2.Name = "label2";
+            label2.Size = new Size(83, 15);
+            label2.TabIndex = 2;
+            label2.Text = "Output Name:";
+            // 
+            // outputName
+            // 
+            outputName.Anchor = AnchorStyles.None;
+            outputName.Location = new Point(100, 54);
+            outputName.Name = "outputName";
+            outputName.Size = new Size(125, 23);
+            outputName.TabIndex = 3;
+            // 
+            // outputFormatSelect
+            // 
+            outputFormatSelect.Anchor = AnchorStyles.None;
+            outputFormatSelect.FormattingEnabled = true;
+            outputFormatSelect.Items.AddRange(new object[] { ".mp4", ".mp3" });
+            outputFormatSelect.Location = new Point(231, 54);
+            outputFormatSelect.Name = "outputFormatSelect";
+            outputFormatSelect.Size = new Size(50, 23);
+            outputFormatSelect.TabIndex = 4;
             // 
             // GUIForm
             // 
             AutoScaleMode = AutoScaleMode.None;
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            Controls.Add(outputFormatSelect);
+            Controls.Add(outputName);
+            Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(URL_tb);
             MinimumSize = new Size(300, 150);
@@ -74,5 +108,19 @@
         }
 
         private Label label1;
+        private Label label2;
+        private TextBox outputName;
+
+        public TextBox getOutputName()
+        {
+            return outputName;
+        }
+
+        private ComboBox outputFormatSelect;
+
+        public ComboBox getOutputFormatSelect()
+        {
+            return outputFormatSelect;
+        }
     }
 }
