@@ -29,15 +29,47 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            tabPage2 = new TabPage();
-            tabControl1 = new TabControl();
             statusStrip1 = new StatusStrip();
             OutputPathLabel = new ToolStripStatusLabel();
             toolStripStatusLabel2 = new ToolStripStatusLabel();
             toolStripDropDownButton1 = new ToolStripDropDownButton();
-            tabControl1.SuspendLayout();
+            tabPage2 = new TabPage();
+            tabControl1 = new TabControl();
             statusStrip1.SuspendLayout();
+            tabControl1.SuspendLayout();
             SuspendLayout();
+            // 
+            // statusStrip1
+            // 
+            statusStrip1.Items.AddRange(new ToolStripItem[] { OutputPathLabel, toolStripStatusLabel2, toolStripDropDownButton1 });
+            statusStrip1.Location = new Point(0, 139);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(384, 22);
+            statusStrip1.TabIndex = 3;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // OutputPathLabel
+            // 
+            OutputPathLabel.Name = "OutputPathLabel";
+            OutputPathLabel.Size = new Size(75, 17);
+            OutputPathLabel.Text = "Output Path:";
+            // 
+            // toolStripStatusLabel2
+            // 
+            toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            toolStripStatusLabel2.Size = new Size(208, 17);
+            toolStripStatusLabel2.Spring = true;
+            // 
+            // toolStripDropDownButton1
+            // 
+            toolStripDropDownButton1.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            toolStripDropDownButton1.Image = (Image)resources.GetObject("toolStripDropDownButton1.Image");
+            toolStripDropDownButton1.ImageTransparentColor = Color.Magenta;
+            toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            toolStripDropDownButton1.ShowDropDownArrow = false;
+            toolStripDropDownButton1.Size = new Size(86, 20);
+            toolStripDropDownButton1.Text = "Set Output Dir";
+            toolStripDropDownButton1.Click += toolStripDropDownButton1_Click;
             // 
             // tabPage2
             // 
@@ -60,62 +92,30 @@
             tabControl1.TabIndex = 2;
             tabControl1.Click += tabControl1_Click;
             // 
-            // statusStrip1
-            // 
-            statusStrip1.Items.AddRange(new ToolStripItem[] { OutputPathLabel, toolStripStatusLabel2, toolStripDropDownButton1 });
-            statusStrip1.Location = new Point(0, 139);
-            statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(384, 22);
-            statusStrip1.TabIndex = 3;
-            statusStrip1.Text = "statusStrip1";
-            // 
-            // OutputPathLabel
-            // 
-            OutputPathLabel.Name = "OutputPathLabel";
-            OutputPathLabel.Size = new Size(75, 17);
-            OutputPathLabel.Text = "Output Path:";
-            // 
-            // toolStripStatusLabel2
-            // 
-            toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            toolStripStatusLabel2.Size = new Size(177, 17);
-            toolStripStatusLabel2.Spring = true;
-            // 
-            // toolStripDropDownButton1
-            // 
-            toolStripDropDownButton1.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            toolStripDropDownButton1.Image = (Image)resources.GetObject("toolStripDropDownButton1.Image");
-            toolStripDropDownButton1.ImageTransparentColor = Color.Magenta;
-            toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            toolStripDropDownButton1.ShowDropDownArrow = false;
-            toolStripDropDownButton1.Size = new Size(86, 20);
-            toolStripDropDownButton1.Text = "Set Output Dir";
-            toolStripDropDownButton1.Click += toolStripDropDownButton1_Click;
-            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(384, 161);
             Controls.Add(statusStrip1);
             Controls.Add(tabControl1);
             MinimumSize = new Size(400, 200);
             Name = "MainForm";
             Text = "Form1";
-            tabControl1.ResumeLayout(false);
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
+            tabControl1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private TabPage tabPage2;
-        private TabControl tabControl1;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel OutputPathLabel;
         private ToolStripStatusLabel toolStripStatusLabel2;
         private ToolStripDropDownButton toolStripDropDownButton1;
+        private TabPage tabPage2;
+        private TabControl tabControl1;
     }
 }

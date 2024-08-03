@@ -25,11 +25,6 @@ namespace YTDL_GUI
             {
                 Debug.WriteLine("################################");
                 Debug.WriteLine($"Downloader ID: #{Program.getDownloader(tabControl1.SelectedIndex).getID()}");
-                Debug.WriteLine($"Output Path: {Program.getOutputPath()}");
-                GUIForm gf = (GUIForm) tabControl1.SelectedTab.Controls[0];
-                Debug.WriteLine($"URL: {gf.getURL().Text}");
-                Debug.WriteLine($"Output File: {gf.getOutputName().Text} Output Format: {gf.getOutputFormatSelect().Text}");
-                Debug.WriteLine($"");
                 Debug.WriteLine("");
             }
         }
@@ -58,6 +53,7 @@ namespace YTDL_GUI
             gf.Dock = DockStyle.Fill;
             gf.AutoScaleMode = AutoScaleMode.None;
             gf.getOutputFormatSelect().SelectedIndex = 0;
+            gf.ActionTaskClicked += downloadButtonClicked;
             // Attach the controls, and add the tab
             tp.Controls.Add(gf);
             tabControl1.TabPages.Insert(tabControl1.TabCount - 1, tp);
@@ -65,6 +61,17 @@ namespace YTDL_GUI
             tabControl1.SelectTab(tp);
             // Create a new downloader object for the newly created tab
             Program.newDownloader();
+        }
+
+        private void downloadButtonClicked(object sender, DownloadEventArgs e)
+        {
+            Debug.WriteLine("################################");
+            Debug.WriteLine("DOWNLOAD BUTTON PRESSED");
+            Debug.WriteLine($"Downloader ID: #{Program.getDownloader(tabControl1.SelectedIndex).getID()}");
+            Debug.WriteLine($"Output Path: {Program.getOutputPath()}");
+            Debug.WriteLine($"URL: {e.URL}");
+            Debug.WriteLine($"Output File: {e.OutputName} Output Format: {e.OutputFormat}");
+            Debug.WriteLine("");
         }
     }
 }
