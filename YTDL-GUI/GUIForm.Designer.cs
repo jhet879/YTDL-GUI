@@ -28,29 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
+            URL_tb = new TextBox();
+            label1 = new Label();
             SuspendLayout();
             // 
-            // textBox1
+            // URL_tb
             // 
-            textBox1.Location = new Point(184, 106);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 0;
+            URL_tb.Anchor = AnchorStyles.None;
+            URL_tb.Location = new Point(48, 13);
+            URL_tb.Name = "URL_tb";
+            URL_tb.Size = new Size(233, 23);
+            URL_tb.TabIndex = 0;
             // 
-            // UserControl1
+            // label1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(textBox1);
-            Name = "UserControl1";
-            Size = new Size(517, 245);
+            label1.Anchor = AnchorStyles.None;
+            label1.AutoSize = true;
+            label1.Location = new Point(11, 16);
+            label1.Name = "label1";
+            label1.Size = new Size(31, 15);
+            label1.TabIndex = 1;
+            label1.Text = "URL:";
+            // 
+            // GUIForm
+            // 
+            AutoScaleMode = AutoScaleMode.None;
+            AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            Controls.Add(label1);
+            Controls.Add(URL_tb);
+            MinimumSize = new Size(300, 150);
+            Name = "GUIForm";
+            Size = new Size(300, 150);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox textBox1;
+        private TextBox URL_tb;
+
+        public TextBox getURL()
+        {
+            return URL_tb;
+        }
+
+        private Label label1;
     }
 }

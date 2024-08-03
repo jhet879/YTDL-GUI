@@ -20,6 +20,7 @@ namespace YTDL_GUI
 
         static int dlCounter = 1;
         static List<Downloader> dlList = [];
+        static String outputPath = "E:\\ytdl";
 
         public static void newDownloader()
         {
@@ -35,6 +36,16 @@ namespace YTDL_GUI
         public static Downloader getDownloader(int index)
         {
             return dlList[index];
+        }
+
+        public static String getOutputPath()
+        {
+            return outputPath;
+        }
+
+        public static void setOutputPath(String path)
+        {
+            outputPath = path;
         }
     }
 }
